@@ -7,7 +7,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
-fun ImageView.loadImage(url: Any){
+fun ImageView.loadImage(url: String){
     Glide.with(this)
         .load(url)
         .centerCrop()

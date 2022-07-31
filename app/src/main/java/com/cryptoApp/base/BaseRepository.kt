@@ -1,7 +1,6 @@
-package com.furkan.beinConnectMovies.base
+package com.cryptoApp.base
 
 import com.cryptoApp.utils.Resource
-import com.cryptoApp.utils.model.ErrorType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -16,10 +15,10 @@ abstract class BaseRepository {
             }catch (throwable : Throwable){
                 when(throwable){
                     is HttpException ->{
-                        Resource.Error(ErrorType.API.code,null)
+                        Resource.Error("Server Error",null)
                     }
                     else -> {
-                        Resource.Error(ErrorType.NETWORK.code,null)
+                        Resource.Error("Network Error",null)
                     }
                 }
             }

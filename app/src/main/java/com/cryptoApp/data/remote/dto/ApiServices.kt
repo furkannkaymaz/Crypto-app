@@ -1,23 +1,13 @@
 package com.cryptoApp.data.remote.dto
 
+import com.cryptoApp.data.remote.model.Coin
+import com.cryptoApp.data.remote.model.CoinModelResult
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ApiServices {
 
-    @GET("genre/movie/list")
-    suspend fun getMovieGenres(
-        @Query("api_key") api: String,
-        @Query("language") language: String
-    ): String
+    @GET("coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+    suspend fun getCoins(
+    ): Coin
 
-    @GET("discover/movie")
-    suspend fun getMovies(
-        @Query("api_key") api: String,
-        @Query("sort_by") sort: String,
-        @Query("include_adult") include_adult: Boolean,
-        @Query("include_video") include_video: Boolean,
-        @Query("page") page: Int,
-        @Query("with_genres") withGenres: Int,
-    ): String
 }
