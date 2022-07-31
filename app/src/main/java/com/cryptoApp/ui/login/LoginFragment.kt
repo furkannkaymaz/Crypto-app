@@ -50,11 +50,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
                             R.id.action_loginFragment_to_fragmentMain,
                         )
                     } else
-                        Toast.makeText(
-                            context,
-                            task.exception!!.message.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        context?.toast(task.exception!!.message.toString())
                 }
         }else{
             context?.toast("Lütfen tüm alanları doldurun")

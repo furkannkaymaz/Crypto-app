@@ -29,9 +29,6 @@ class DetailViewModel @Inject constructor(private val detailRepository: DetailRe
     val error: LiveData<String>
         get() = _error
 
-    private val _filterText = MutableLiveData<List<CoinModelResult>>()
-    val filterText: LiveData<List<CoinModelResult>>
-        get() = _filterText
 
     fun getCoinDetail(id : String) {
 

@@ -2,161 +2,186 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:fillViewport="true"
     android:layout_height="match_parent"
-    android:background="@color/fragmentBg">
+    android:background="@color/fragmentBg"
+    android:fillViewport="true">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminateTint="@color/appBg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.cryptoApp.components.CustomTopContent
-        android:id="@+id/contentTop"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/ivCoin"
-        android:layout_width="@dimen/_61sdp"
-        android:layout_height="@dimen/_61sdp"
-        android:background="@drawable/rounded_crypto"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contentTop" />
-
-    <ImageView
-        android:id="@+id/ivBack"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/contentTop"
-        app:layout_constraintBottom_toBottomOf="@id/contentTop"
-        android:padding="3dp"
-        app:tint="#FAFAFA" />
-
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:layout_marginTop="12dp"
-        android:background="@color/white"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivCoin">
-
-        <TextView
-            android:id="@+id/tvCoinName"
+        <ProgressBar
+            android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:ellipsize="end"
-            android:fontFamily="@font/averta_regular"
-            android:gravity="start"
-            android:paddingHorizontal="@dimen/_8sdp"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingStart="@dimen/_8sdp"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#FFB1B1"
+            android:indeterminateTint="@color/appBg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvCurrentPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:ellipsize="end"
-            android:fontFamily="@font/averta_regular"
-            android:gravity="start"
-            android:paddingHorizontal="@dimen/_8sdp"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingStart="@dimen/_8sdp"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <View
+        <com.cryptoApp.components.CustomTopContent
+            android:id="@+id/contentTop"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#FFB1B1"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCoin"
+            android:layout_width="@dimen/_61sdp"
+            android:layout_height="@dimen/_61sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_crypto"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            app:layout_constraintTop_toBottomOf="@id/contentTop" />
 
-        <TextView
-            android:id="@+id/tvDesc"
+        <ImageView
+            android:id="@+id/ivRefresh"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_refresh"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/ivCoin"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/ivCoin"
+
+            />
+
+
+        <EditText
+            android:id="@+id/etTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:ellipsize="end"
-            android:fontFamily="@font/averta_regular"
-            android:gravity="start"
-            android:paddingHorizontal="@dimen/_8sdp"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingStart="@dimen/_8sdp"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#FFB1B1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_10sdp"
+            android:inputType="number"
+            android:hint="@string/refrestTimer"
+            app:layout_constraintStart_toEndOf="@id/ivCoin"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/ivCoin"
+            />
 
         <TextView
-            android:id="@+id/tvHashingAlgoritma"
+            android:id="@+id/btnRefreshTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:ellipsize="end"
-            android:fontFamily="@font/averta_regular"
-            android:gravity="start"
-            android:paddingHorizontal="@dimen/_8sdp"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingStart="@dimen/_8sdp"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/start"
+            android:paddingVertical="@dimen/_9sdp"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@id/etTimer"
+            app:layout_constraintStart_toStartOf="@id/etTimer"
+            app:layout_constraintTop_toBottomOf="@id/etTimer"
+            android:backgroundTint="@color/appBg"
+            android:textColor="@color/white"
+            />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#FFB1B1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/contentTop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            app:layout_constraintTop_toTopOf="@id/contentTop"
+            app:tint="#FAFAFA" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.609"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivCoin">
+
+            <TextView
+                android:id="@+id/tvCoinName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/averta_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvCurrentPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/averta_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv24Percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/averta_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/averta_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-    </ScrollView>
+
+            <TextView
+                android:id="@+id/tvHashingAlgoritma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/averta_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

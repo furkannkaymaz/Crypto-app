@@ -18,4 +18,6 @@
     <string name="logInSuccess">Giriş başarılı</string>
     <string name="signInSuccess">Kayıt Başarılı</string>
     <string name="emptyArea">Lütfen tüm alanları doldurun</string>
+    <string name="start">Başla</string>
+    <string name="refrestTimer">Refresh Timer(SEC)</string>
 </resources>
