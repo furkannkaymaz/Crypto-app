@@ -1,4 +1,4 @@
-package com.furkan.beinConnectMovies.app
+package com.cryptoApp.app
 
 import android.app.Application
 import android.content.Context

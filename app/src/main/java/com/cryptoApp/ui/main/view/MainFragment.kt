@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cryptoApp.R
 import com.cryptoApp.base.BaseFragment
-import com.cryptoApp.data.remote.model.CoinModel
 import com.cryptoApp.data.remote.model.CoinModelResult
 import com.cryptoApp.databinding.FragmentMainBinding
 import com.cryptoApp.ui.detail.view.DetailFragmentArgs
@@ -49,7 +48,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
 
         viewModel.getCoinList.observe(viewLifecycleOwner, {
 
-            it.forEach {
+            it.forEach { it ->
                 coinData.add(it)
             }
 

@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.EditText
 import com.cryptoApp.databinding.MainViewSearchBarBinding
-import com.furkan.beinConnectMovies.base.BaseLinearLayout
+import com.cryptoApp.base.BaseLinearLayout
 
 
 class SearchBarView(context: Context, attrs: AttributeSet? = null) :
@@ -17,9 +17,7 @@ class SearchBarView(context: Context, attrs: AttributeSet? = null) :
         return MainViewSearchBarBinding.inflate(inflater, this, true)
     }
 
-    override fun viewCreated(attrs: AttributeSet?) {
-
-    }
+    override fun viewCreated(attrs: AttributeSet?) {}
 
     fun getEditText() : EditText{
         return binding.editTextSearch

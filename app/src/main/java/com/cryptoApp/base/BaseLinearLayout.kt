@@ -1,4 +1,4 @@
-package com.furkan.beinConnectMovies.base
+package com.cryptoApp.base
 
 import android.content.Context
 import android.util.AttributeSet

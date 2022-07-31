@@ -16,6 +16,7 @@ abstract class BaseFragment<VB: ViewBinding, VM: ViewModel> : Fragment() {
     abstract val viewModel: VM
 
     open fun observerData(){}
+    open fun clickListeners(){}
     abstract fun onCreateFinished()
 
     abstract fun layoutResource(inflater: LayoutInflater, container: ViewGroup?): VB
@@ -33,6 +34,7 @@ abstract class BaseFragment<VB: ViewBinding, VM: ViewModel> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onCreateFinished()
         observerData()
+        clickListeners()
     }
 
     override fun onDestroyView() {

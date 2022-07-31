@@ -17,6 +17,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvHeader"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        android:padding="3dp"
+        app:tint="#000000" />
+
+
     <LinearLayout
         android:id="@+id/layEditText"
         android:layout_width="match_parent"
@@ -41,6 +53,14 @@
             android:hint="@string/passwordHint"
             />
 
+        <EditText
+            android:id="@+id/etRePassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:hint="@string/rePasswordText"
+            />
+
 
     </LinearLayout>
 
@@ -51,29 +71,17 @@
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/layEditText"
-   >
+        >
 
-        <Button
-            android:id="@+id/btnLogIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/logInText"
-            />
 
         <Button
             android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/signInText"
+
             />
 
-
     </LinearLayout>
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
