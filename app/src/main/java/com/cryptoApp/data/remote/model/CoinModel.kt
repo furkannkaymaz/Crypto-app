@@ -1,8 +1,6 @@
 package com.cryptoApp.data.remote.model
 
-data class Coin(
-    val coinModelResult: ArrayList<CoinModelResult>? = null
-)
+class CoinModel: ArrayList<CoinModelResult>()
 
 data class CoinModelResult(
     val id: String? = null,

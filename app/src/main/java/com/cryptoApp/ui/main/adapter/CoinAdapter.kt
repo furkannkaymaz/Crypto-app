@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cryptoApp.base.BaseAdapter
-import com.cryptoApp.data.remote.model.Coin
+import com.cryptoApp.data.remote.model.CoinModel
 import com.cryptoApp.data.remote.model.CoinModelResult
 import com.cryptoApp.databinding.ItemCoinListBinding
 import com.cryptoApp.utils.extensions.loadImage
 
-class CoinAdapter(private val itemClick: ((Coin) -> Unit)) : BaseAdapter<Coin, CoinAdapter.ViewHolder>() {
+class CoinAdapter(private val itemClick: ((CoinModel) -> Unit)) : BaseAdapter<CoinModel, CoinAdapter.ViewHolder>() {
 
     override fun createView(
         context: Context,
@@ -24,9 +24,10 @@ class CoinAdapter(private val itemClick: ((Coin) -> Unit)) : BaseAdapter<Coin, C
     class ViewHolder(val binding: ItemCoinListBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun bindView(holder: ViewHolder, position: Int, item: Coin) {
+
+    override fun bindView(holder: ViewHolder, position: Int, item: CoinModel) {
         holder.binding.ivCoin.setOnClickListener {
-            item.coinModelResult?.get(position)?.image?.let { images -> holder.binding.ivCoin.loadImage(images) }
+            item[position].image?.let { images -> holder.binding.ivCoin.loadImage(images) }
             itemClick(item)
         }
     }

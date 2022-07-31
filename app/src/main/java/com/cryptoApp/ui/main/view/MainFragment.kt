@@ -7,7 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cryptoApp.base.BaseFragment
-import com.cryptoApp.data.remote.model.Coin
+import com.cryptoApp.data.remote.model.CoinModel
 import com.cryptoApp.data.remote.model.CoinModelResult
 import com.cryptoApp.databinding.FragmentMainBinding
 import com.cryptoApp.ui.main.adapter.CoinAdapter
@@ -22,14 +22,14 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
 
     override val viewModel by viewModels<MainFragmentViewModel>()
     private lateinit var adapter: CoinAdapter
-    private var searchItem: Coin? = null
+    private var searchItem: CoinModel? = null
 
     override fun onCreateFinished() {
 
         binding?.rvCoin?.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-    //    binding?.rvCoin?.adapter = adapter
+        binding?.rvCoin?.adapter = adapter
     }
 
     override fun observerData() {
@@ -37,10 +37,10 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
         getData()
         viewModel.getCoinList.observe(viewLifecycleOwner, {
 
-       //     searchItem = it
+            searchItem = it
             Log.d("datamessage",it.toString())
 
-    //        setRecycleViewData(it)
+            setRecycleViewData(it)
 
         })
     }
@@ -52,7 +52,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
         }
     }
 
-    private fun setRecycleViewData(list: Coin) {
+    private fun setRecycleViewData(list: CoinModel) {
 
         adapter.set(arrayListOf(list))
         adapter.notifyDataSetChanged()

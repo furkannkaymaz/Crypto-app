@@ -1,11 +1,10 @@
 package com.cryptoApp.ui.main.view_model
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cryptoApp.data.remote.model.Coin
+import com.cryptoApp.data.remote.model.CoinModel
 import com.cryptoApp.data.remote.model.CoinModelResult
 import com.cryptoApp.data.remote.repository.MainRepository
 import com.cryptoApp.utils.Resource
@@ -16,8 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainFragmentViewModel  @Inject constructor(private val mainRepository: MainRepository): ViewModel() {
 
-    private val _getCoinList = MutableLiveData<Coin>()
-    val getCoinList: LiveData<Coin>
+    private val _getCoinList = MutableLiveData<CoinModel>()
+    val getCoinList: LiveData<CoinModel>
         get() = _getCoinList
 
     private val _isLoading = MutableLiveData<Boolean>()
