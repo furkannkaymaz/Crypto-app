@@ -12,7 +12,6 @@ import com.cryptoApp.base.BaseLinearLayout
 class SearchBarView(context: Context, attrs: AttributeSet? = null) :
     BaseLinearLayout<MainViewSearchBarBinding>(context, attrs) {
 
-
     override fun createView(inflater: LayoutInflater): MainViewSearchBarBinding {
         return MainViewSearchBarBinding.inflate(inflater, this, true)
     }

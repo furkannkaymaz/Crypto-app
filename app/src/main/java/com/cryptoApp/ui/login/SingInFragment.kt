@@ -19,6 +19,7 @@ class SingInFragment : BaseFragment<FragmentSingInBinding,SignInViewModel>() {
 
     override fun onCreateFinished() {
         navController = Navigation.findNavController(requireActivity(), R.id.main)
+        binding?.contentTop?.setText("Crypto",requireActivity())
 
     }
     override fun clickListeners() {

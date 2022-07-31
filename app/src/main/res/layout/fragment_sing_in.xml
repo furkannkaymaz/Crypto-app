@@ -4,18 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main"
+    android:background="@color/fragmentBg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tvHeader"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/appHeader"
-        android:textSize="36dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:padding="16dp"
+    <com.cryptoApp.components.CustomTopContent
+        android:id="@+id/contentTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/ivBack"
@@ -23,10 +20,10 @@
         android:layout_height="45dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvHeader"
-        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintTop_toTopOf="@id/contentTop"
+        app:layout_constraintBottom_toBottomOf="@id/contentTop"
         android:padding="3dp"
-        app:tint="#000000" />
+        app:tint="#FAFAFA" />
 
 
     <LinearLayout
@@ -38,29 +35,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/etUsername"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/usernameHint"
-            />
+            android:layout_height="80dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contentTop"
+            >
 
-        <EditText
-            android:id="@+id/etPassword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/usernameHint"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/etBgLogin"
+                android:fontFamily="@font/averta_regular" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:hint="@string/passwordHint"
-            />
+            android:layout_height="80dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contentTop"
+            >
 
-        <EditText
-            android:id="@+id/etRePassword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:hint="@string/passwordHint"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/etBgLogin"
+                android:fontFamily="@font/averta_regular" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:hint="@string/rePasswordText"
-            />
+            android:layout_height="80dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contentTop"
+            >
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/usernameHint"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/etBgLogin"
+                android:fontFamily="@font/averta_regular" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -74,12 +117,18 @@
         >
 
 
-        <Button
+        <TextView
             android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/add_btn"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
             android:text="@string/signInText"
-
+            android:paddingVertical="@dimen/_9sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             />
 
     </LinearLayout>

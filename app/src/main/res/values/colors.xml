@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="etTextLogin">#ADADAD</color>
+    <color name="etBgLogin">#FAF8F8</color>
+    <color name="appBg">#0D1E66</color>
+    <color name="fragmentBg">#686C87</color>
 </resources>

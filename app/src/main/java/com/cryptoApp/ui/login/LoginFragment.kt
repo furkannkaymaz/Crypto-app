@@ -12,14 +12,13 @@ import com.cryptoApp.databinding.FragmentLoginBinding
 import com.cryptoApp.utils.extensions.toast
 import com.google.firebase.auth.FirebaseAuth
 
-
 class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
     override val viewModel by viewModels<LoginViewModel>()
     private lateinit var navController : NavController
 
     override fun onCreateFinished() {
         navController = Navigation.findNavController(requireActivity(), R.id.main)
-
+        binding?.contentTop?.setText("Crypto",requireActivity())
     }
 
     override fun clickListeners() {

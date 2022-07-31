@@ -3,19 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fragmentBg"
     android:id="@+id/main"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tvHeader"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/appHeader"
-        android:textSize="36dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:padding="16dp"
+    <com.cryptoApp.components.CustomTopContent
+        android:id="@+id/contentTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/layEditText"
@@ -26,20 +22,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/etUsername"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/usernameHint"
-            />
+            android:layout_height="80dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contentTop"
+            >
 
-        <EditText
-            android:id="@+id/etPassword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/usernameHint"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/etBgLogin"
+                android:fontFamily="@font/averta_regular" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:hint="@string/passwordHint"
-            />
+            android:layout_height="80dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contentTop"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:hint="@string/passwordHint"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_btn"
+                android:backgroundTint="@color/etBgLogin"
+                android:fontFamily="@font/averta_regular" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
@@ -53,19 +80,36 @@
         app:layout_constraintTop_toBottomOf="@id/layEditText"
    >
 
-        <Button
+        <TextView
             android:id="@+id/btnLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/add_btn"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
             android:text="@string/logInText"
+            android:paddingVertical="@dimen/_9sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             />
 
-        <Button
+        <TextView
             android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/add_btn"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/signInText"
+            android:paddingVertical="@dimen/_9sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             />
+
+
 
 
     </LinearLayout>

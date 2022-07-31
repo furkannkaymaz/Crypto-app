@@ -7,7 +7,7 @@ data class CoinDetailModel (
     val assetPlatformID: Any? = null,
     val platforms: Platforms? = null,
     val blockTimeInMinutes: Long? = null,
-    val hashingAlgorithm: String? = null,
+    val hashing_algorithm: String? = null,
     val categories: List<String>? = null,
     val publicNotice: Any? = null,
     val additionalNotices: List<Any?>? = null,
@@ -26,7 +26,7 @@ data class CoinDetailModel (
     val communityScore: Double? = null,
     val liquidityScore: Double? = null,
     val publicInterestScore: Double? = null,
-    val marketData: MarketData? = null,
+    val market_data: MarketData? = null,
     val communityData: CommunityData? = null,
     val developerData: DeveloperData? = null,
     val publicInterestStats: PublicInterestStats? = null,
@@ -136,7 +136,7 @@ data class ReposURL (
 )
 
 data class MarketData (
-    val currentPrice: Map<String, Double>? = null,
+    val current_price: Map<String, Double>? = null,
     val totalValueLocked: Any? = null,
     val mcapToTvlRatio: Any? = null,
     val fdvToTvlRatio: Any? = null,
@@ -153,8 +153,8 @@ data class MarketData (
     val totalVolume: Map<String, Double>? = null,
     val high24H: Map<String, Double>? = null,
     val low24H: Map<String, Double>? = null,
-    val priceChange24H: Double? = null,
-    val priceChangePercentage24H: Double? = null,
+    val price_change_24h: Double? = null,
+    val price_change_percentage_24h: Double? = null,
     val priceChangePercentage7D: Double? = null,
     val priceChangePercentage14D: Double? = null,
     val priceChangePercentage30D: Double? = null,

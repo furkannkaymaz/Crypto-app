@@ -1,5 +1,6 @@
 package com.cryptoApp.ui.main.view
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import com.cryptoApp.databinding.FragmentMainBinding
 import com.cryptoApp.ui.detail.view.DetailFragmentArgs
 import com.cryptoApp.ui.main.adapter.CoinAdapter
 import com.cryptoApp.ui.main.view_model.MainFragmentViewModel
+import com.cryptoApp.utils.extensions.loadImage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,6 +31,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
     private var coinData : ArrayList<CoinModelResult> = arrayListOf()
 
     override fun onCreateFinished() {
+        binding?.contentTop?.setText("Hoş Geldiniz",requireActivity())
 
         sendAdapterData()
         configureUiItems()
@@ -48,7 +51,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
 
         viewModel.getCoinList.observe(viewLifecycleOwner, {
 
-            it.forEach { it ->
+            it.forEach {
                 coinData.add(it)
             }
 
@@ -78,12 +81,14 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
             }
 
             viewModel.filterText.observe(viewLifecycleOwner, {
+                checkData(it,"Eşleşen Kayıt bulunamadı")
                 setRecycleViewData(it as ArrayList<CoinModelResult>)
             })
         }
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setRecycleViewData(list: ArrayList<CoinModelResult>) {
 
         adapter.set(list)
@@ -96,6 +101,18 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>() 
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
         binding?.rvCoin?.adapter = adapter
+    }
+
+    private fun checkData(list: List<CoinModelResult>, noContentText: String) {
+
+        if (list.isNullOrEmpty()) {
+            binding?.layNoContent?.visibility = View.VISIBLE
+            binding?.tvNoContent?.text = noContentText
+            binding?.rvCoin?.visibility = View.INVISIBLE
+        } else {
+            binding?.layNoContent?.visibility = View.INVISIBLE
+            binding?.rvCoin?.visibility = View.VISIBLE
+        }
     }
 
     override fun layoutResource(
