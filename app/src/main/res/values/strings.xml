@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CryptoApp</string>
+
+    <string name="serverError">Server hatası</string>
+    <string name="networkError">Newtork hatası</string>
+    <string name="error">Beklenmedik bir hata oluştu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
