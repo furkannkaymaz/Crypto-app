@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/CryptoApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/CryptoApp/app/src/main/res/layout/fragment_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/CryptoApp/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="..\:/CryptoApp/app/src/main/res/layout/fragment_main.xml" value="0.3196022727272727" />
         <entry key="..\:/CryptoApp/app/src/main/res/layout/item_coin_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/CryptoApp/app/src/main/res/layout/main_view_search_bar.xml" value="0.321875" />
       </map>
     </option>
   </component>

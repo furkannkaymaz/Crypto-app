@@ -11,7 +11,7 @@
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_moviesFragment_to_detailFragment"
+            android:id="@+id/action_fragmentMain_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
@@ -20,7 +20,7 @@
         android:label="detail_fragment"
         tools:layout="@layout/fragment_detail" >
         <argument
-            android:name="detailData"
+            android:name="id"
             app:argType="string"/>
     </fragment>
 

@@ -10,7 +10,7 @@ import com.cryptoApp.data.remote.model.CoinModelResult
 import com.cryptoApp.databinding.ItemCoinListBinding
 import com.cryptoApp.utils.extensions.loadImage
 
-class CoinAdapter(private val itemClick: ((CoinModel) -> Unit)) : BaseAdapter<CoinModel, CoinAdapter.ViewHolder>() {
+class CoinAdapter(private val itemClick: ((CoinModelResult) -> Unit)) : BaseAdapter<CoinModelResult, CoinAdapter.ViewHolder>() {
 
     override fun createView(
         context: Context,
@@ -25,12 +25,13 @@ class CoinAdapter(private val itemClick: ((CoinModel) -> Unit)) : BaseAdapter<Co
         RecyclerView.ViewHolder(binding.root)
 
 
-    override fun bindView(holder: ViewHolder, position: Int, item: CoinModel) {
+    override fun bindView(holder: ViewHolder, position: Int, item: CoinModelResult) {
+            item.image?.let { images -> holder.binding.ivCoin.loadImage(images) }
+            holder.binding.tvCoinName.text = item.name
+
         holder.binding.ivCoin.setOnClickListener {
-            item[position].image?.let { images -> holder.binding.ivCoin.loadImage(images) }
             itemClick(item)
         }
     }
-
 }
 
