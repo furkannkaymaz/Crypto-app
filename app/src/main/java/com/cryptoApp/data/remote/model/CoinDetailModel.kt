@@ -206,8 +206,8 @@ data class Ticker (
     val isStale: Boolean? = null,
     val tradeURL: String? = null,
     val tokenInfoURL: Any? = null,
-    val coinID: ID? = null,
-    val targetCoinID: TargetCoinID? = null
+    val coinId: String? = null,
+    val targetCoinId: TargetCoinID? = null
 )
 
 enum class Base {
