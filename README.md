@@ -10,3 +10,5 @@
 ###### Navigation -> Pass data with safeArgs
 ###### Custom View
 ###### FirebaseAuth
+
+api -> https://www.coingecko.com/en/api
